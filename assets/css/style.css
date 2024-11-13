@@ -17,6 +17,11 @@ body {
     overflow: hidden;
 }
 
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
 #app {
     width: 100dvw;
     height: 100dvh;
@@ -31,20 +36,20 @@ body {
     transform: translate(-50%, -50%);
     font-size: 3rem;
     animation: 2s hide-loader;
-    animation-fill-mode: forwards ;
+    animation-fill-mode: forwards;
 }
 
-.loader .dot{
+.loader .dot {
     opacity: 0;
     animation: 2s load infinite forwards;
 }
 
-.loader .dot:nth-child(2){
+.loader .dot:nth-child(2) {
     opacity: 0;
     animation-delay: 250ms;
 }
 
-.loader .dot:nth-child(3){
+.loader .dot:nth-child(3) {
     opacity: 0;
     animation-delay: 500ms;
 }
@@ -59,7 +64,7 @@ body {
     opacity: 0;
     animation: 1s show-content linear;
     animation-delay: 2s;
-    animation-fill-mode: forwards ;
+    animation-fill-mode: forwards;
 }
 
 .banner .title {
@@ -85,6 +90,230 @@ body {
     align-items: center;
 }
 
+.flex-justify-content-center {
+    justify-content: center;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.grid-container {
+    padding: 0.5vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 24.5vw;
+    grid-gap: 0.5vw;
+    /* optional gutter , use "vw" instead of "px" to keep proportions responsive */
+}
+
+.griditem {
+    background-size: cover;
+    background-position: center;
+    padding: 2vw;
+    font-size: 1.5vw;
+    box-sizing: border-box;
+}
+
+.offer-games {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(0.8rem, 3dvw, 1.5rem);
+    font-family: "Bruno Ace SC", sans-serif;
+}
+
+.game-card {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    border-radius: 3px;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+.game-card .img {
+    width: 100%;
+    border-radius: 6px;
+    aspect-ratio: 16/9;
+    filter: brightness(70%) grayscale(100%);
+    color: darkorange;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-card .img:hover {
+    filter: grayscale(0%);
+}
+
+.site-header {
+    border-bottom: 1px solid #ccc;
+    padding: .5em 1em;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.site-identity h1 {
+    font-size: 1.5em;
+    margin: .6em 0;
+    display: inline-block;
+}
+
+
+.site-navigation ul,
+.site-navigation li {
+    margin: 0;
+    padding: 0;
+}
+
+.site-navigation li {
+    display: inline-block;
+    margin: 1.4em 1em 1em 1em;
+}
+
+.btn-fancy {
+    position: relative;
+    padding: 15px 25px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.btn-fancy:hover {
+    border: 2px solid #fff
+}
+
+.btn-fancy::before {
+    content: '';
+    position: absolute;
+    inset: 0 8px;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+
+.btn-fancy::after {
+    content: '';
+    position: absolute;
+    inset: 8px 0;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+
+.btn-fancy.btn1:hover::before {
+    inset: 16px 8px;
+}
+
+.btn-fancy.btn1:hover::after {
+    inset: 8px 16px 8px;
+}
+
+.btn-fancy.btn2:hover::before {
+    inset: 0px 8px;
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+}
+
+.btn-fancy.btn2:hover::after {
+    inset: 8px 0px;
+    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+}
+
+.btn-fancy.btn3:hover::before {
+    inset: 0px -12px;
+    transform: skewY(15deg);
+    -webkit-transform: skewY(15deg);
+    -moz-transform: skewY(15deg);
+    -ms-transform: skewY(15deg);
+    -o-transform: skewY(15deg);
+}
+
+.btn-fancy.btn3:hover::after {
+    inset: -12px 0px;
+    transform: skewX(15deg);
+    -webkit-transform: skewX(15deg);
+    -moz-transform: skewX(15deg);
+    -ms-transform: skewX(15deg);
+    -o-transform: skewX(15deg);
+}
+
+.btn-fancy.btn4:hover,
+.btn-fancy.btn5:hover,
+.btn-fancy.btn6:hover {
+    border-color: transparent;
+}
+
+.btn-fancy.btn4:hover::before {
+    inset: 0px 30px;
+    transform: skew(25deg);
+    -webkit-transform: skew(25deg);
+    -moz-transform: skew(25deg);
+    -ms-transform: skew(25deg);
+    -o-transform: skew(25deg);
+}
+
+.btn4:hover::after {
+    inset: 10px 0px;
+    transform: skew(-25deg);
+    -webkit-transform: skew(-25deg);
+    -moz-transform: skew(-25deg);
+    -ms-transform: skew(-25deg);
+    -o-transform: skew(-25deg);
+}
+
+.btn-fancy.btn5:hover::before,
+.btn-fancy.btn5:hover::after {
+    inset: 0px;
+}
+
+.btn-fancy.btn6:hover::before {
+    inset: 0 0;
+    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+}
+
+.btn-fancy.btn6:hover::after {
+    inset: 0 -4px;
+    transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+}
+
 .letters {
     position: relative;
     display: flex;
@@ -105,31 +334,40 @@ body {
     text-align: center;
 }
 
-.letters.letter-spacing-0 > .letter {
+.letters .letter.space {
+    display: block;
+}
+
+.letters .letter.space::after {
+    content: "\00a0";
+    display: block;
+}
+
+.letters.letter-spacing-0>.letter {
     padding: 0;
 }
 
-.letters.letter-spacing-1 > .letter {
+.letters.letter-spacing-1>.letter {
     padding: 0 0.25rem;
 }
 
-.letters.letter-spacing-2 > .letter {
+.letters.letter-spacing-2>.letter {
     padding: 0 0.5rem;
 }
 
-.letters.letter-spacing-3 > .letter {
+.letters.letter-spacing-3>.letter {
     padding: 0 0.75rem;
 }
 
-.letters.letter-spacing-4 > .letter {
+.letters.letter-spacing-4>.letter {
     padding: 0 1rem;
 }
 
-.letters.letter-spacing-5 > .letter {
+.letters.letter-spacing-5>.letter {
     padding: 0 1.25rem;
 }
 
-.letters.letter-spacing-6 > .letter {
+.letters.letter-spacing-6>.letter {
     padding: 0 1.5rem;
 }
 
@@ -144,13 +382,16 @@ body {
     from {
         font-size: 50%;
     }
+
     to {
         font-size: 100%;
     }
 }
 
 @keyframes load {
-    50% { opacity: 1; }
+    50% {
+        opacity: 1;
+    }
 }
 
 @keyframes hide-loader {
@@ -164,4 +405,5 @@ body {
         opacity: 1;
     }
 }
+
 /* ANIMATION END */
