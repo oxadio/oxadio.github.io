@@ -1,0 +1,21 @@
+{
+    "name": "oXadio",
+    "short_name": "oXa",
+    "theme_color": "#141414",
+    "background_color": "#141414",
+    "display": "standalone",
+    "scope": "/",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
