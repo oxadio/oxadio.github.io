@@ -1,0 +1,42 @@
+* {
+    --bg-color: rgb(20, 20, 20);
+    --text-color: rgb(238, 238, 238);
+}
+
+.site-header a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+    height: 76px;
+    justify-content: space-between;
+    font-family: "Bruno Ace SC", sans-serif;
+}
+
+.site-identity h1 {
+    font-size: 1.5em;
+    margin: .6em 0;
+    display: inline-block;
+}
+
+.site-identity h2 {
+    font-size: 1.5em;
+    margin: .1em 0;
+    display: inline-block;
+}
+
+
+.site-navigation ul,
+.site-navigation li {
+    margin: 0;
+    padding: 0;
+}
+
+.site-navigation li {
+    display: inline-block;
+    margin: 1.4em 1em 1em 1em;
+}
