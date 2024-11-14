@@ -15,6 +15,7 @@
     height: 76px;
     justify-content: space-between;
     font-family: "Bruno Ace SC", sans-serif;
+    z-index: 99999;
 }
 
 .site-identity h1 {

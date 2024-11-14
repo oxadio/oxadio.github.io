@@ -99,19 +99,17 @@ a {
 }
 
 .grid-container {
-    padding: 0.5dvw;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 24.5dvw;
-    grid-gap: 0.5dvw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 2rem 0 0 0;
+    padding: 0;
 }
 
 .griditem {
-    background-size: cover;
-    background-position: center;
-    padding: 2vw;
-    font-size: 1.5vw;
-    box-sizing: border-box;
+    display: flex;
+    padding: 1rem;
 }
 
 .offer-games {
@@ -141,10 +139,11 @@ a {
     aspect-ratio: 16/9;
     filter: brightness(70%) grayscale(100%);
     color: darkorange;
-    background-size: contain;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-repeat: no-repeat;
 }
 
 .game-card .img:hover {
