@@ -156,7 +156,7 @@ a {
 }
 
 .game-card .game-subtitle {
-    font-size: clamp(0.3rem, 3dvw, 1.2rem);
+    font-size: clamp(0.2rem, 2.5dvw, 1rem);
 }
 
 .site-header {
