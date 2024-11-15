@@ -9,9 +9,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./../../assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="./../../assets/favicon/site.webmanifest">
     <title>oXadio - Hit the space</title>
-    <link rel="stylesheet" href="./../assets/css/style.css?v=5">
-    <link rel="stylesheet" href="./../../assets/fonts/font.css?v=5">
-    <link rel="stylesheet" href="./assets/css/style.css?v=5">
+    <link rel="stylesheet" href="./../assets/css/style.css?v=6">
+    <link rel="stylesheet" href="./../../assets/fonts/font.css?v=6">
+    <link rel="stylesheet" href="./assets/css/style.css?v=6">
 </head>
 
 <body>
@@ -25,6 +25,8 @@
             </ul>
         </div>
     </header>
+    <div id="scene-parent"></div>
+    <div id="boost-button-container"><button id="boost">Boost</button></div>
     <div id="ui"
         style="position: absolute; width: 100%; height: calc(100dvh - 76px); z-index: 10; user-select: none; pointer-events: none; overflow: hidden;">
         <div id="boost-container"
@@ -52,7 +54,7 @@
     </div>
 
     <div id="overlay" class="visible"
-        style="position: absolute; top: 76px; left: 0px; width: 100%; height: calc(100dvh - 76px); background: black; justify-content: center; align-items: center; overflow: scroll; z-index: 9999;">
+        style="position: absolute; top: 76px; left: 0px; width: 100%; height: calc(100dvh - 76px); background: black; justify-content: center; align-items: center; overflow: auto; z-index: 9999;">
         <div id="controls">
             <p style="font-size: 1.4rem;">You are on a mission to colonize planets in the nearby system.<br>Search
                 for habitable planets, but watch out for the dangers of outer space!</p>
@@ -147,7 +149,6 @@
             </g>
         </svg>
     </div>
-    <div id="boost-button-container"><button id="boost">Boost</button></div>
-    <script src="./assets/js/script.js?v=5"></script>
+    <script src="./assets/js/script.js?v=6"></script>
 </body>
 </html>
