@@ -6,6 +6,7 @@
     --bg--logo-second-half: rgb(30, 30, 30);
     --bg-color: rgb(20, 20, 20);
     --text-color: rgb(238, 238, 238);
+    --theme-color: #141414;
 }
 
 body {
@@ -106,16 +107,19 @@ a {
     margin: 2rem 0 0 0;
     padding: 0;
     max-height: calc(100dvh - 170px);
-    overflow: scroll;
+    overflow: auto;
+    width: 100dvw;
+    justify-content: space-around;
 }
 
 .griditem {
     display: flex;
-    padding: 1rem;
+    padding: 1rem 0;
 }
 
 .offer-games {
     position: absolute;
+    width: 100%;
     bottom: 0%;
     left: 50%;
     transform: translate(-50%, -50%);

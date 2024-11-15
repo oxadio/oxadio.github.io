@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#141414">
+    <link rel="manifest" href="./manifest.json?v=5">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="./assets/favicon/site.webmanifest">
     <title>oXadio</title>
-    <link rel="stylesheet" href="./assets/fonts/font.css?v=4">
-    <link rel="stylesheet" href="./assets/css/style.css?v=4">
+    <link rel="stylesheet" href="./assets/fonts/font.css?v=5">
+    <link rel="stylesheet" href="./assets/css/style.css?v=5">
 </head>
 <body>
     <div id="app">
@@ -43,7 +45,7 @@
                     <span class="letter">!</span>
                 </div>
             </div>
-            <div class="offer-games">
+            <div class="offer-games" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
                 <div class="letters letter-spacing-1">
                     <span class="letter">M</span>
                     <span class="letter">e</span>
@@ -65,7 +67,8 @@
                     <span class="letter">o</span>
                     <span class="letter">m</span>
                     <span class="letter">e</span>
-                    <span class="letter space"></span>
+                </div>
+                <div class="letters letter-spacing-1">
                     <span class="letter">G</span>
                     <span class="letter">a</span>
                     <span class="letter">m</span>
@@ -78,5 +81,7 @@
             </div>
         </div>
     </div>
+    <script src="./service-worker.js?v=5"></script>
+    <script src="./assets/js/common.js?v=5"></script>
 </body>
 </html>
