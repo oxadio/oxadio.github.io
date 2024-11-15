@@ -68,6 +68,7 @@ self.addEventListener("fetch", event => {
             }
 
             // Otherwise, fetch it from the network and cache it
+            console.log(`REQ: ${event.request}`);
             return fetch(event.request).then(networkResponse => {
                 return caches.open(CACHE_NAME).then(cache => {
                     cache.put(event.request, networkResponse.clone());

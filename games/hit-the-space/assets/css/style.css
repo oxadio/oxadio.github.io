@@ -7,6 +7,10 @@ body {
     font-family: "Kode Mono";
 }
 
+body * {
+    user-select: none;
+}
+
 #boost-button-container {
     position: absolute;
     bottom: 1%;
