@@ -335,7 +335,7 @@ function renderer_init() {
 			// webglShortFunctionNames[name] = 'gl.'+name.match(/(^..|[A-Z]|\d.|v$)/g).join('');
 		}
 	}
-	// console.log(JSON.stringify(webglShortFunctionNames, null, '\t'));
+	// // console.log(JSON.stringify(webglShortFunctionNames, null, '\t'));
 
 	vertex_buffer = gl.createBuffer();
 	gl.bindBuffer(gl.ARRAY_BUFFER, vertex_buffer);
@@ -444,7 +444,7 @@ function compile_shader(shader_type, shader_source) {
 	var shader = gl.createShader(shader_type);
 	gl.shaderSource(shader, shader_source);
 	gl.compileShader(shader);
-	// console.log(gl.getShaderInfoLog(shader));
+	// // console.log(gl.getShaderInfoLog(shader));
 	return shader;
 };
 
