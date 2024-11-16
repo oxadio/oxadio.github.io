@@ -52,10 +52,10 @@ const ASSETS = [
 
 // Install event: cache all files in ASSETS
 self.addEventListener("install", event => {
-    // console.log("Installing Service Worker and caching files...");
+    console.log("Installing Service Worker and caching files...");
     event.waitUntil(
         caches.open(CACHE_NAME).then(cache => {
-            // console.log("Caching app and game files...");
+            console.log("Caching app and game files...");
             return cache.addAll(ASSETS);
         })
     );
@@ -70,16 +70,16 @@ self.addEventListener("fetch", event => {
                 return cachedResponse;
             }
 
-            // console.log(`Fetching from network: ${event.request.url}`);
+            console.log(`Fetching from network: ${event.request.url}`);
             return fetch(event.request).then(networkResponse => {
                 return caches.open(CACHE_NAME).then(cache => {
                     cache.put(event.request, networkResponse.clone());
                     return networkResponse;
                 }).catch(err => {
-                    // console.log("Err:", err);
+                    console.log("Err:", err);
                 }) ;
             }).catch(err => {
-                // console.log("Err:", err);
+                console.log("Err:", err);
             });
         })
     );
@@ -87,7 +87,7 @@ self.addEventListener("fetch", event => {
 
 // Activate event: delete old caches and force new version
 self.addEventListener("activate", event => {
-    // console.log("Activating new Service Worker...");
+    console.log("Activating new Service Worker...");
     event.waitUntil(
         (async () => {
             const cacheNames = await caches.keys();
@@ -95,7 +95,7 @@ self.addEventListener("activate", event => {
                 cacheNames
                     .filter(cacheName => cacheName !== CACHE_NAME)
                     .map(cacheName => {
-                        // console.log(`Deleting old cache: ${cacheName}`);
+                        console.log(`Deleting old cache: ${cacheName}`);
                         return caches.delete(cacheName);
                     })
             );
