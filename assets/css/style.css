@@ -144,7 +144,7 @@ a {
     border-radius: 6px;
     aspect-ratio: 16/9;
     filter: brightness(70%) grayscale(100%);
-    color: darkorange;
+    color: #ff8c00;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -381,6 +381,10 @@ a {
 
 .letters.letter-spacing-6>.letter {
     padding: 0 1.5rem;
+}
+
+.font--kode-mono {
+    font-family: "Kode Mono";
 }
 
 /* ANIMATIONS START */

@@ -1,3 +1,6 @@
+const CACHE_VERSION = "v8"; // Increment this version whenever there are changes
+const CACHE_NAME = `oxa-pwa-cache-${CACHE_VERSION}`;
+
 const ASSETS = [
     "/",
     "./index.html",
@@ -45,50 +48,65 @@ const ASSETS = [
     "./games/captain-callisto/dist.zip",
     "./games/underrun/assets/png/l3.png",
     "./assets/favicon/android-chrome-512x512.png"
-]
-
-const CACHE_NAME = "oxa-pwa-cache-v1";
+];
 
 // Install event: cache all files in ASSETS
 self.addEventListener("install", event => {
+    // console.log("Installing Service Worker and caching files...");
     event.waitUntil(
         caches.open(CACHE_NAME).then(cache => {
-            console.log("Caching app and game files...");
-            return cache.addAll(ASSETS);  // Use ASSETS from asset-list.js
+            // console.log("Caching app and game files...");
+            return cache.addAll(ASSETS);
         })
     );
+    self.skipWaiting(); // Activate the new Service Worker immediately
 });
 
+// Fetch event: serve files from cache or fetch from the network
 self.addEventListener("fetch", event => {
     event.respondWith(
         caches.match(event.request).then(cachedResponse => {
-            // If the file is in the cache, serve it
             if (cachedResponse) {
                 return cachedResponse;
             }
 
-            // Otherwise, fetch it from the network and cache it
-            console.log(`REQ: ${event.request}`);
+            // console.log(`Fetching from network: ${event.request.url}`);
             return fetch(event.request).then(networkResponse => {
                 return caches.open(CACHE_NAME).then(cache => {
                     cache.put(event.request, networkResponse.clone());
                     return networkResponse;
-                });
+                }).catch(err => {
+                    // console.log("Err:", err);
+                }) ;
+            }).catch(err => {
+                // console.log("Err:", err);
             });
         })
     );
 });
 
-
-// Activate event: clear old caches
+// Activate event: delete old caches and force new version
 self.addEventListener("activate", event => {
+    // console.log("Activating new Service Worker...");
     event.waitUntil(
-        caches.keys().then(cacheNames => {
-            return Promise.all(
+        (async () => {
+            const cacheNames = await caches.keys();
+            await Promise.all(
                 cacheNames
                     .filter(cacheName => cacheName !== CACHE_NAME)
-                    .map(cacheName => caches.delete(cacheName))
+                    .map(cacheName => {
+                        // console.log(`Deleting old cache: ${cacheName}`);
+                        return caches.delete(cacheName);
+                    })
             );
-        })
+            return self.clients.claim(); // Take control of any open clients
+        })()
     );
+});
+
+// Notify users of new updates
+self.addEventListener("message", event => {
+    if (event.data.type === "SKIP_WAITING") {
+        self.skipWaiting();
+    }
 });
