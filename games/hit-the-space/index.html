@@ -9,9 +9,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./../../assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="./../../assets/favicon/site.webmanifest">
     <title>oXadio - Hit the space</title>
-    <link rel="stylesheet" href="./../assets/css/style.css?v=10">
-    <link rel="stylesheet" href="./../../assets/fonts/font.css?v=10">
-    <link rel="stylesheet" href="./assets/css/style.css?v=10">
+    <link rel="stylesheet" href="./../assets/css/style.css?v=11">
+    <link rel="stylesheet" href="./../../assets/fonts/font.css?v=11">
+    <link rel="stylesheet" href="./assets/css/style.css?v=11">
 </head>
 
 <body>
@@ -53,31 +53,32 @@
         </svg>
     </div>
 
-    <div id="overlay" class="visible"
-        style="position: absolute; top: 76px; left: 0px; width: 100%; height: calc(100dvh - 76px); background: black; justify-content: center; align-items: center; overflow: auto; z-index: 9999;">
-        <div id="controls">
-            <p style="font-size: 1.4rem;">You are on a mission to colonize planets in the nearby system.<br>Search
-                for habitable planets, but watch out for the dangers of outer space!</p>
-            <p style="font-size: 1.8rem;">How to play</p>
-            <p>Hold space to accelerate</p>
-            <p>Reach checkpoints (pulsing green planets) to advance</p>
-            <p>Avoid hitting planets and going near black holes</p>
-            <p>Pay attention to your fuel:</p>
-            <ul>
-                <li>You can see the remaining fuel in the top left corner (blue bar)</li>
-                <li>If you run out of fuel, you cannot accelerate any further</li>
-                <li>The fuel will be restored when you reach a checkpoint</li>
-                <li>Different amount of fuel is available for each checkpoint</li>
-            </ul>
-            <p>Press Enter or R to self-destruct, and restart at the latest checkpoint</p>
-            <div style="display: flex; justify-content: space-evenly;">
-                <div id="start-text" style="display: inline-block; margin: 5vmin 0px;" onclick="ResetGame();">Reset
+    <div id="overlay" class="visible">
+        <div id="overlay-content">
+            <div id="controls">
+                <p style="font-size: 1.4rem;">You are on a mission to colonize planets in the nearby system.<br>Search
+                    for habitable planets, but watch out for the dangers of outer space!</p>
+                <p style="font-size: 1.8rem;">How to play</p>
+                <p>Hold space to accelerate</p>
+                <p>Reach checkpoints (pulsing green planets) to advance</p>
+                <p>Avoid hitting planets and going near black holes</p>
+                <p>Pay attention to your fuel:</p>
+                <ul>
+                    <li>You can see the remaining fuel in the top left corner (blue bar)</li>
+                    <li>If you run out of fuel, you cannot accelerate any further</li>
+                    <li>The fuel will be restored when you reach a checkpoint</li>
+                    <li>Different amount of fuel is available for each checkpoint</li>
+                </ul>
+                <p>Press Enter or R to self-destruct, and restart at the latest checkpoint</p>
+                <div style="display: flex; justify-content: space-evenly;">
+                    <div id="start-text" style="display: inline-block; margin: 5vmin 0px;" onclick="ResetGame();">Reset
+                    </div>
+                    <div id="start-text" style="display: inline-block; margin: 5vmin 0px;"
+                        onclick="StartGame();document.getElementById('controls').style.display='none'">Start</div>
                 </div>
-                <div id="start-text" style="display: inline-block; margin: 5vmin 0px;"
-                    onclick="StartGame();document.getElementById('controls').style.display='none'">Start</div>
             </div>
-        </div>
-        <div id="game-completed" style="display: none; font-size: 8vmin; text-align: center;">Mission complete!
+            <div id="game-completed" style="display: none; font-size: 8vmin; text-align: center;">Mission complete!
+            </div>
         </div>
     </div>
 
@@ -149,6 +150,6 @@
             </g>
         </svg>
     </div>
-    <script src="./assets/js/script.js?v=10"></script>
+    <script src="./assets/js/script.js?v=11"></script>
 </body>
 </html>
