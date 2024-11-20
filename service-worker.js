@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v10"; // Increment this version whenever there are changes
+const CACHE_VERSION = "v12"; // Increment this version whenever there are changes
 const CACHE_NAME = `oxa-pwa-cache-${CACHE_VERSION}`;
 
 const ASSETS = [
